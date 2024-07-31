@@ -1,0 +1,49 @@
+/* AddTodo.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: #444; /* Dark gray background for the container */
+}
+
+input {
+  padding: 15px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #555; /* Slightly lighter dark gray */
+  color: #fff; /* White text color */
+  font-size: 18px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Light placeholder color */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00ff00; /* Neon green glow on focus */
+}
+
+.addButton {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00ff00; /* Neon green color */
+  color: #333; /* Dark gray text color */
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #00cc00; /* Darker neon green on hover */
+  box-shadow: 0 0 10px #00ff00; /* Glow effect on hover */
+}

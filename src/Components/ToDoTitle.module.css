@@ -1,0 +1,12 @@
+/* ToDoTitle.module.css */
+.tit {
+  font-family: 'Bebas Neue', sans-serif; /* Use the new font */
+  text-align: center;
+  font-size: 72px; /* Larger font size for prominence */
+  color: #00ff00; /* Neon green color */
+  margin: 20px 0;
+  letter-spacing: 4px; /* Increased letter spacing for a unique look */
+  text-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.5), /* Soft glow */
+    0 0 20px rgba(0, 255, 0, 0.3); /* Medium glow */
+}

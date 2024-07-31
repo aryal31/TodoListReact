@@ -1,0 +1,12 @@
+/* ErrorMsg.module.css */
+.error {
+  font-family: 'Bebas Neue', sans-serif; /* Use the same font */
+  font-size: 48px; /* Slightly smaller than the title */
+  color: #00ff00; /* Neon green color */
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: 2px; /* Increased letter spacing */
+  text-shadow: 
+    0 0 5px rgba(0, 255, 0, 0.5), /* Soft glow */
+    0 0 10px rgba(0, 255, 0, 0.3); /* Medium glow */
+}
