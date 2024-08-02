@@ -13,8 +13,9 @@ function AddTodo({ onNewItem }) {
     setDate(event.target.value);
   };
 
-  const handleOnClick = () => {
+  const handleOnClick = (event) => {
     if (name && date) {
+      event.preventDefault();
       onNewItem(name, date);
       setName("");
       setDate("");
@@ -24,7 +25,7 @@ function AddTodo({ onNewItem }) {
   };
   return (
     <Container>
-      <div className={styles.container}>
+      <form className={styles.container} onSubmit={handleOnClick} >
         <input
           type="text"
           onChange={handleNameChange}
@@ -32,10 +33,10 @@ function AddTodo({ onNewItem }) {
           placeholder="Enter task name"
         />
         <input type="date" onChange={handleDateChange} value={date} />
-        <button onClick={handleOnClick} className={styles.addButton}>
+        <button className={styles.addButton}>
           add
         </button>
-      </div>
+      </form>
     </Container>
   );
 }
