@@ -1,8 +1,14 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Container from "./Container";
 import styles from "./AddTodo.module.css";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function AddTodo({ onNewItem }) {
+
+
+function AddTodo() {
+  const {addNewItem} = useContext(TodoItemsContext);
+ 
+
   const todoNameElement = useRef();
   const dueDateElement = useRef();
 
@@ -10,7 +16,7 @@ function AddTodo({ onNewItem }) {
     const name = todoNameElement.current.value;
     const date = dueDateElement.current.value;
       event.preventDefault();
-      onNewItem(name, date);
+      addNewItem(name, date);
       todoNameElement.current.value = "";
       dueDateElement.current.value = "";
   };

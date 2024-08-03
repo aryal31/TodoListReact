@@ -5,38 +5,39 @@ import ItemsAdd from "./Components/ItemsAdd.jsx";
 import Container from "./Components/Container.jsx";
 import ErrorMsg from "./Components/ErrorMsg.jsx";
 import { useState } from "react";
+import { TodoItemsContext } from "./store/todo-items-store.jsx";
 
 function App() {
   // const items = [
 
   // ];
 
-  const [items, setTodoItem] = useState([]);
+  const [itemList, setTodoItem] = useState([]);
 
-  const onNewItem = (name, date) => {
-    const newItemList = [{
-      iname: name,
-      dueDate: date,
-    },
-      ...items,
-    ];
-    setTodoItem(newItemList);
+  const addNewItem = (name, date) => {
+    setTodoItem((currValue) => [
+      {
+        iname: name,
+        dueDate: date,
+      },
+      ...currValue,
+    ]);
   };
 
-  const handleDeleteItem=(itemName)=>{
-    const newTodoItems = items.filter(item => item.iname !== itemName);
+  const deleteItem = (itemName) => {
+    const newTodoItems = itemList.filter((item) => item.iname !== itemName);
     setTodoItem(newTodoItems);
-  }
-  
+  };
+
   return (
-    <>
+    <TodoItemsContext.Provider value={{ itemList, addNewItem, deleteItem }}>
       <Container>
         <ToDoTitle />
-        <AddTodo itemList={items} onNewItem={onNewItem}></AddTodo>
-        <ErrorMsg itemList={items}></ErrorMsg>
-        <ItemsAdd itemList={items} onDeleteClick={handleDeleteItem}></ItemsAdd>
+        <AddTodo></AddTodo>
+        <ErrorMsg></ErrorMsg>
+        <ItemsAdd></ItemsAdd>
       </Container>
-    </>
+    </TodoItemsContext.Provider>
   );
 }
 
