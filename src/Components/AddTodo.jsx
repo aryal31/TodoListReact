@@ -1,41 +1,29 @@
-import { useState } from "react";
+import { useRef } from "react";
 import Container from "./Container";
 import styles from "./AddTodo.module.css";
 
 function AddTodo({ onNewItem }) {
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
-  };
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
   const handleOnClick = (event) => {
-    if (name && date) {
+    const name = todoNameElement.current.value;
+    const date = dueDateElement.current.value;
       event.preventDefault();
       onNewItem(name, date);
-      setName("");
-      setDate("");
-    } else {
-      alert("please fill in both fields.");
-    }
+      todoNameElement.current.value = "";
+      dueDateElement.current.value = "";
   };
   return (
     <Container>
-      <form className={styles.container} onSubmit={handleOnClick} >
+      <form className={styles.container} onSubmit={handleOnClick}>
         <input
           type="text"
-          onChange={handleNameChange}
-          value={name}
+          ref={todoNameElement}
           placeholder="Enter task name"
         />
-        <input type="date" onChange={handleDateChange} value={date} />
-        <button className={styles.addButton}>
-          add
-        </button>
+        <input ref={dueDateElement} type="date" />
+        <button className={styles.addButton}>add</button>
       </form>
     </Container>
   );
