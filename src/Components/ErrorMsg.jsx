@@ -11,7 +11,7 @@ const ErrorMsg = () => {
   return (
     <>
       {itemList.length === 0 && (
-        <h1 className={styles.error}>Enjoy your day!</h1>
+        <h1 className={styles.error}>Have a nice day!</h1>
       )}
     </>
   );

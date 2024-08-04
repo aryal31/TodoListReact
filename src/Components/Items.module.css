@@ -28,8 +28,8 @@
 }
 
 .deleteButton {
-  padding: 12px 25px; /* Adjust padding for a larger button */
-  border: none; /* Remove border */
+  padding: 12px 25px; 
+  border: none; 
   border-radius: 5px; /* Rounded corners */
   background-color: #ff8c00; /* Soft orange color for delete button */
   color: #fff; /* White text color */

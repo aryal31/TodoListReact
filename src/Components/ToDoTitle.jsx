@@ -2,7 +2,7 @@ import styles from './ToDoTitle.module.css'
 
 const ToDoTitle = ()=>{
  
-  return <p className={styles.tit}>Todo list</p>
+  return <h1 className={styles.tit}>Todo list</h1>
 }
 
 

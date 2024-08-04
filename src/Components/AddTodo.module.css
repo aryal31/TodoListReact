@@ -36,7 +36,7 @@ input:focus {
   border: none;
   border-radius: 5px;
   background-color: #00ff00; /* Neon green color */
-  color: #333; /* Dark gray text color */
+  color: #333; 
   font-weight: bold;
   font-size: 18px;
   cursor: pointer;
